@@ -75,7 +75,7 @@ export default class App extends Component {
           showsHorizontalScrollIndicator={false}
           onMomentumScrollEnd={(e) => {
             const place = (e.nativeEvent.contentOffset.x > 0)
-              ? e.nativeEvent.contentOffset.x / Dimensions.get('window').width
+              ? Math.round(e.nativeEvent.contentOffset.x / Dimensions.get('window').width)
               : 0;
 
             const { latitude, longitude, mark } = this.state.places[place];
